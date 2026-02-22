@@ -19,11 +19,25 @@ const Home = () => {
   const menuItems = {
     veg: [
       { 
-        name: 'Veg Biryani', 
-        price: '₹180', 
+        name: 'Veg Biryani Single', 
+        price: '₹100', 
         serves: 'Serves 1',
         image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/poqbknr9_Veg%20Biryani.jpg',
+        tag: 'Bestseller'
+      },
+      { 
+        name: 'Veg Biryani Regular', 
+        price: '₹180', 
+        serves: 'Serves 1-2',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/poqbknr9_Veg%20Biryani.jpg',
         tag: 'Popular'
+      },
+      { 
+        name: 'Veg Biryani Family', 
+        price: '₹400', 
+        serves: 'Serves 3-4',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/poqbknr9_Veg%20Biryani.jpg',
+        tag: 'Value Pack'
       },
       { 
         name: 'Paneer 65', 
