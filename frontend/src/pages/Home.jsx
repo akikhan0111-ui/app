@@ -676,6 +676,7 @@ const Home = () => {
             <Button 
               className="bg-[#d4af37] hover:bg-[#f4e5b0] text-[#0a2c2e] font-semibold px-12 py-6 text-lg mt-8"
               onClick={handleBulkOrderClick}
+              data-testid="bulk-order-btn"
             >
               Call Now for Bulk Orders
             </Button>
