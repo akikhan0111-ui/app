@@ -334,7 +334,7 @@ const Home = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {menuItems.nonVeg.map((item, index) => (
                     <Card key={index} className="bg-[#0f3b3f] border-[#d4af37]/40 overflow-hidden group hover:border-[#d4af37] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/30 cursor-pointer">
-                      <div className="relative h-56 overflow-hidden">
+                      <div className={`relative h-56 overflow-hidden ${(item.name === 'Chicken Chilli' || item.name === 'Chicken 65') ? 'bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]' : ''}`}>
                         <img 
                           src={item.image} 
                           alt={item.name}
