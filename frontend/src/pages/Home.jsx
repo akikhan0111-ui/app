@@ -55,14 +55,14 @@ const Home = () => {
       { 
         name: 'Chicken Biryani Regular', 
         price: '₹200', 
-        serves: 'Serves 2-3',
+        serves: 'Serves 1-2',
         image: 'https://images.pexels.com/photos/33947401/pexels-photo-33947401.jpeg',
         tag: 'Most Ordered'
       },
       { 
         name: 'Chicken Biryani Family', 
         price: '₹450', 
-        serves: 'Serves up to 5',
+        serves: 'Serves 3-4',
         image: 'https://images.unsplash.com/photo-1705174299330-939dd03cc864',
         tag: 'Value Pack'
       },
@@ -287,7 +287,7 @@ const Home = () => {
             </h2>
             <div className="inline-block bg-[#0f3b3f] border border-[#d4af37]/30 rounded-full px-8 py-4">
               <p className="text-[#e8dcc0] text-lg">
-                <span className="font-bold text-[#d4af37]">Portion Guide:</span> Single – 1 person | Regular – 2-3 people | Family – Up to 5 people
+                <span className="font-bold text-[#d4af37]">Portion Guide:</span> Single – 1 person | Regular – 1-2 people | Family – 3-4 people
               </p>
             </div>
           </div>
