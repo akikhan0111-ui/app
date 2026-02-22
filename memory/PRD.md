@@ -2,7 +2,7 @@
 ## Product Requirements Document
 
 **Created:** February 22, 2025
-**Last Updated:** February 22, 2025
+**Last Updated:** February 22, 2025 (Version 2.0 - Enhanced Design)
 
 ---
 
@@ -37,7 +37,22 @@ Build a premium, mobile-first website for a cloud kitchen brand named "Biryani L
 
 ---
 
-## What's Been Implemented (Feb 22, 2025)
+## What's Been Implemented
+
+### Version 2.0 (Feb 22, 2025) - Enhanced Design
+- **Larger, Dynamic Logo** in header that shrinks on scroll
+- **Redesigned Hero Section** with badge, animated gradient, icons for delivery time/quality/taste
+- **Enhanced About Section** with icon cards and logo placed in bottom-right (no overlap)
+- **Improved Menu Section** with badges (Bestseller, Most Ordered, Value Pack, etc.)
+- **Better Food Images** - accurate images for all dishes
+- **Menu Updates:**
+  - Split Tikka Butter Masala into Chicken & Paneer versions
+  - Corrected images for Chicken Biryani Regular, Family, Chicken 65, Chicken Chilli
+  - Added 4th veg item: Paneer Tikka Butter Masala
+- **Enhanced Animations:** Hover effects, scale transforms, smooth transitions
+- **Improved Typography:** Larger headings, better spacing, section emojis
+
+### Version 1.0 (Feb 22, 2025)
 
 ### ✅ Frontend (Fully Functional)
 - **Hero Section** with dual CTAs (Swiggy, Zomato, Direct Order)
@@ -146,4 +161,36 @@ Build a premium, mobile-first website for a cloud kitchen brand named "Biryani L
 - UPI payment uses deep linking to open payment apps
 - Design follows premium, royal aesthetic with deep teal and gold color scheme
 - Images sourced from Unsplash and Pexels (free commercial use)
+
+
+---
+
+## Design Enhancements Made (v2.0)
+
+### Visual Improvements
+1. **Logo:** Increased from h-12/h-16 to h-16/h-20/h-24 with scroll-based sizing
+2. **Hero Section:** 
+   - Added "Now Delivering" badge
+   - 3-icon feature grid (Clock, Flame, Award)
+   - Animated Charminar watermark
+   - Multi-layered blur effects on image
+3. **About Section:**
+   - 4-card grid layout with icon circles
+   - Logo watermark repositioned to bottom-right corner
+   - Removed text overlap issues
+   - Added hover scale effects
+4. **Menu Cards:**
+   - Promotional badges (Bestseller, Most Ordered, etc.)
+   - Enhanced hover effects with 125% zoom
+   - Gradient overlays on images
+   - Larger text and better spacing
+
+### Image Updates
+- **Chicken Biryani Single:** Restaurant plated biryani
+- **Chicken Biryani Regular:** Clay pot authentic presentation  
+- **Chicken Biryani Family:** Action shot with fork lift
+- **Chicken 65:** Crispy red fried chicken with chilies
+- **Chicken Chilli:** Indo-Chinese dark plated presentation
+- **Chicken Tikka Butter Masala:** Rich orange curry
+- **Paneer Tikka Butter Masala:** Creamy paneer curry (NEW)
 
