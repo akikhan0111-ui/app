@@ -292,11 +292,18 @@ const Home = () => {
           </div>
           
           {/* Right Column - Hero Slider */}
-          <div className="relative group" data-testid="hero-carousel">
-            <div className="overflow-hidden rounded-3xl" ref={emblaRef}>
-              <div className="flex">
+          <div className="relative" data-testid="hero-carousel">
+            <Carousel
+              opts={{ loop: true }}
+              plugins={[autoplayPlugin.current]}
+              setApi={setCarouselApi}
+              className="rounded-3xl overflow-hidden"
+              onMouseEnter={() => autoplayPlugin.current.stop()}
+              onMouseLeave={() => autoplayPlugin.current.play()}
+            >
+              <CarouselContent>
                 {heroSlides.map((slide, index) => (
-                  <div key={index} className="flex-[0_0_100%] min-w-0 relative">
+                  <CarouselItem key={index}>
                     <div className="relative h-[350px] sm:h-[400px] md:h-[500px]">
                       <img 
                         src={slide.image} 
@@ -309,26 +316,26 @@ const Home = () => {
                         <p className="text-[#e8dcc0] text-sm sm:text-base md:text-lg">{slide.subtitle}</p>
                       </div>
                     </div>
-                  </div>
+                  </CarouselItem>
                 ))}
-              </div>
-            </div>
-            
-            {/* Navigation Arrows */}
-            <button 
-              onClick={scrollPrev}
-              data-testid="carousel-prev"
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a2c2e]/70 hover:bg-[#d4af37] border border-[#d4af37]/50 hover:border-[#d4af37] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
-            >
-              <ChevronLeft className="w-5 h-5 text-[#d4af37] hover:text-[#0a2c2e]" />
-            </button>
-            <button 
-              onClick={scrollNext}
-              data-testid="carousel-next"
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a2c2e]/70 hover:bg-[#d4af37] border border-[#d4af37]/50 hover:border-[#d4af37] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
-            >
-              <ChevronRight className="w-5 h-5 text-[#d4af37] hover:text-[#0a2c2e]" />
-            </button>
+              </CarouselContent>
+
+              {/* Custom prev/next arrows */}
+              <button 
+                onClick={() => carouselApi?.scrollPrev()}
+                data-testid="carousel-prev"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a2c2e]/70 hover:bg-[#d4af37] border border-[#d4af37]/50 hover:border-[#d4af37] rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300 z-10"
+              >
+                <ChevronLeft className="w-5 h-5 text-[#d4af37]" />
+              </button>
+              <button 
+                onClick={() => carouselApi?.scrollNext()}
+                data-testid="carousel-next"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a2c2e]/70 hover:bg-[#d4af37] border border-[#d4af37]/50 hover:border-[#d4af37] rounded-full flex items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300 z-10"
+              >
+                <ChevronRight className="w-5 h-5 text-[#d4af37]" />
+              </button>
+            </Carousel>
             
             {/* Decorative corner frames */}
             <div className="absolute -top-3 -left-3 w-20 h-20 border-t-2 border-l-2 border-[#d4af37]/40 rounded-tl-3xl pointer-events-none" />
