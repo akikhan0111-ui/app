@@ -22,21 +22,21 @@ const Home = () => {
         name: 'Veg Biryani Single', 
         price: '₹100', 
         serves: 'Serves 1',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/poqbknr9_Veg%20Biryani.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
         tag: 'Bestseller'
       },
       { 
         name: 'Veg Biryani Regular', 
         price: '₹180', 
         serves: 'Serves 1-2',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/poqbknr9_Veg%20Biryani.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
         tag: 'Popular'
       },
       { 
         name: 'Veg Biryani Family', 
         price: '₹400', 
         serves: 'Serves 3-4',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/poqbknr9_Veg%20Biryani.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
         tag: 'Value Pack'
       },
       { 
@@ -63,21 +63,21 @@ const Home = () => {
         name: 'Chicken Biryani Single', 
         price: '₹120', 
         serves: 'Serves 1',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/k5yq6q06_Chicken%20Single%20Biryani.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/wky1rhav_Chicken%20Biryani%20Single.png',
         tag: 'Bestseller'
       },
       { 
         name: 'Chicken Biryani Regular', 
         price: '₹200', 
         serves: 'Serves 1-2',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/jvy4zku0_Chicken%20Regular%20Biryani.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/85s8ocqw_Chicken%20Biryani%20Regular.png',
         tag: 'Most Ordered'
       },
       { 
         name: 'Chicken Biryani Family', 
         price: '₹450', 
         serves: 'Serves 3-4',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/f01txe4i_Chicken%20Family%20Biryani.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/t0peu4w7_Chicken%20Biryani%20Family.png',
         tag: 'Value Pack'
       },
       { 
@@ -95,7 +95,7 @@ const Home = () => {
       { 
         name: 'Chicken Tikka Butter Masala', 
         price: '₹250', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/kmc15d9b_Chicken%20tikka%20masala.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/7czvv2qh_Chicken%20Tikka%20Masala.png',
         tag: 'Chef Special'
       }
     ]
