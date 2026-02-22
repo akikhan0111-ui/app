@@ -324,24 +324,34 @@ const Home = () => {
           </div>
           
           {/* Menu Items */}
-          <div className="space-y-12">
+          <div className="space-y-16">
             {(activeCategory === 'all' || activeCategory === 'nonVeg') && (
               <div>
-                <h3 className="text-2xl font-serif text-[#d4af37] mb-6 text-center md:text-left">Non-Veg</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h3 className="text-3xl font-serif text-[#d4af37] mb-8 text-center">🍗 Non-Veg Specials</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {menuItems.nonVeg.map((item, index) => (
-                    <Card key={index} className="bg-[#0f3b3f] border-[#d4af37]/30 overflow-hidden group hover:border-[#d4af37] transition-all duration-300">
-                      <div className="h-48 overflow-hidden">
+                    <Card key={index} className="bg-[#0f3b3f] border-[#d4af37]/40 overflow-hidden group hover:border-[#d4af37] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/30 cursor-pointer">
+                      <div className="relative h-56 overflow-hidden">
                         <img 
                           src={item.image} 
                           alt={item.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
                         />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f3b3f] to-transparent opacity-60" />
+                        {item.tag && (
+                          <Badge className="absolute top-4 right-4 bg-[#d4af37] text-[#0a2c2e] font-bold px-3 py-1 shadow-lg">
+                            {item.tag}
+                          </Badge>
+                        )}
                       </div>
-                      <CardContent className="p-6">
-                        <h4 className="text-xl font-semibold text-[#d4af37] mb-2">{item.name}</h4>
-                        {item.serves && <p className="text-sm text-[#e8dcc0] mb-2">{item.serves}</p>}
-                        <p className="text-2xl font-bold text-[#f4e5b0]">{item.price}</p>
+                      <CardContent className="p-6 space-y-3">
+                        <h4 className="text-2xl font-serif text-[#d4af37]">{item.name}</h4>
+                        {item.serves && (
+                          <p className="text-sm text-[#e8dcc0] bg-[#0a2c2e]/50 inline-block px-3 py-1 rounded-full">
+                            {item.serves}
+                          </p>
+                        )}
+                        <p className="text-3xl font-bold text-[#f4e5b0]">{item.price}</p>
                       </CardContent>
                     </Card>
                   ))}
@@ -351,21 +361,31 @@ const Home = () => {
             
             {(activeCategory === 'all' || activeCategory === 'veg') && (
               <div>
-                <h3 className="text-2xl font-serif text-[#d4af37] mb-6 text-center md:text-left">Veg</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h3 className="text-3xl font-serif text-[#d4af37] mb-8 text-center">🌿 Veg Delights</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {menuItems.veg.map((item, index) => (
-                    <Card key={index} className="bg-[#0f3b3f] border-[#d4af37]/30 overflow-hidden group hover:border-[#d4af37] transition-all duration-300">
-                      <div className="h-48 overflow-hidden">
+                    <Card key={index} className="bg-[#0f3b3f] border-[#d4af37]/40 overflow-hidden group hover:border-[#d4af37] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/30 cursor-pointer">
+                      <div className="relative h-56 overflow-hidden">
                         <img 
                           src={item.image} 
                           alt={item.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
                         />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f3b3f] to-transparent opacity-60" />
+                        {item.tag && (
+                          <Badge className="absolute top-4 right-4 bg-[#d4af37] text-[#0a2c2e] font-bold px-3 py-1 shadow-lg">
+                            {item.tag}
+                          </Badge>
+                        )}
                       </div>
-                      <CardContent className="p-6">
-                        <h4 className="text-xl font-semibold text-[#d4af37] mb-2">{item.name}</h4>
-                        {item.serves && <p className="text-sm text-[#e8dcc0] mb-2">{item.serves}</p>}
-                        <p className="text-2xl font-bold text-[#f4e5b0]">{item.price}</p>
+                      <CardContent className="p-6 space-y-3">
+                        <h4 className="text-2xl font-serif text-[#d4af37]">{item.name}</h4>
+                        {item.serves && (
+                          <p className="text-sm text-[#e8dcc0] bg-[#0a2c2e]/50 inline-block px-3 py-1 rounded-full">
+                            {item.serves}
+                          </p>
+                        )}
+                        <p className="text-3xl font-bold text-[#f4e5b0]">{item.price}</p>
                       </CardContent>
                     </Card>
                   ))}
