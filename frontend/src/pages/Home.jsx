@@ -155,67 +155,73 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#0a2c2e]">
       {/* Header */}
-      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      <header data-testid="site-header" className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-gradient-to-r from-[#0a2c2e]/98 via-[#0f3b3f]/98 to-[#0a2c2e]/98 backdrop-blur-md py-2 shadow-lg shadow-[#d4af37]/10' 
-          : 'bg-gradient-to-r from-[#0a2c2e]/95 via-[#0f3b3f]/95 to-[#0a2c2e]/95 backdrop-blur-sm py-4'
-      } border-b-2 border-[#d4af37]/30`}>
+          ? 'bg-[#0a2c2e]/98 backdrop-blur-xl py-2 shadow-[0_4px_30px_rgba(212,175,55,0.15)]' 
+          : 'bg-[#0a2c2e]/90 backdrop-blur-md py-3'
+      }`}>
+        {/* Gold accent line at very top */}
+        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent" />
+        
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <img 
                 src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
                 alt="Biryani Leaf" 
-                className={`transition-all duration-300 ${scrolled ? 'h-16 md:h-20' : 'h-20 md:h-24 lg:h-28'}`}
+                data-testid="header-logo"
+                className={`transition-all duration-500 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20 lg:h-24'}`}
               />
-              <div className="hidden lg:block border-l-2 border-[#d4af37]/30 pl-4">
-                <p className="text-[#d4af37] font-serif text-lg">Taste of Hyderabad</p>
-                <p className="text-[#e8dcc0] text-sm flex items-center gap-1">
-                  <Clock className="w-3 h-3" />
+              <div className="hidden md:block border-l border-[#d4af37]/40 pl-3">
+                <p className="text-[#d4af37] font-serif text-base leading-tight">Taste of Hyderabad</p>
+                <p className="text-[#e8dcc0]/80 text-xs flex items-center gap-1 mt-0.5">
+                  <Clock className="w-3 h-3 text-[#d4af37]" />
                   Open 11 AM - 11 PM
                 </p>
               </div>
             </div>
             
-            <nav className="hidden md:flex gap-6 text-[#d4af37] font-medium text-lg">
-              <button 
-                onClick={() => scrollToSection('menu')} 
-                className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform relative group"
-              >
-                Menu
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4af37] group-hover:w-full transition-all" />
-              </button>
-              <button 
-                onClick={() => scrollToSection('order')} 
-                className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform relative group"
-              >
-                Order
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4af37] group-hover:w-full transition-all" />
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform relative group"
-              >
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4af37] group-hover:w-full transition-all" />
-              </button>
+            <nav data-testid="header-nav" className="hidden md:flex items-center gap-1">
+              {[
+                { label: 'About', icon: <Star className="w-3.5 h-3.5" />, target: 'about' },
+                { label: 'Menu', icon: <Utensils className="w-3.5 h-3.5" />, target: 'menu' },
+                { label: 'Order', icon: <Phone className="w-3.5 h-3.5" />, target: 'order' },
+                { label: 'Contact', icon: <MapPin className="w-3.5 h-3.5" />, target: 'contact' }
+              ].map((item) => (
+                <button 
+                  key={item.target}
+                  onClick={() => scrollToSection(item.target)} 
+                  className="relative px-4 py-2 text-[#e8dcc0] hover:text-[#d4af37] transition-all duration-300 group flex items-center gap-1.5 text-sm font-medium"
+                >
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.icon}</span>
+                  {item.label}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-[#d4af37] group-hover:w-3/4 transition-all duration-300 rounded-full" />
+                </button>
+              ))}
             </nav>
             
-            <div className="flex items-center gap-3">
-              <div className="hidden md:flex flex-col items-end">
-                <a href="tel:8804081857" className="text-[#d4af37] font-bold text-sm hover:text-[#f4e5b0] transition-colors">
-                  📞 8804081857
-                </a>
-              </div>
+            <div className="flex items-center gap-2 sm:gap-3">
+              <a 
+                href="tel:8804081857" 
+                className="hidden lg:flex items-center gap-1.5 text-[#e8dcc0] hover:text-[#d4af37] transition-colors text-sm border border-[#d4af37]/20 rounded-full px-3 py-1.5 hover:border-[#d4af37]/50"
+                data-testid="header-phone"
+              >
+                <Phone className="w-3.5 h-3.5 text-[#d4af37]" />
+                8804081857
+              </a>
               <Button 
                 onClick={() => scrollToSection('order')}
-                className="bg-gradient-to-r from-[#d4af37] to-[#f4e5b0] text-[#0a2c2e] hover:from-[#f4e5b0] hover:to-[#d4af37] font-bold px-6 py-3 text-base shadow-lg hover:shadow-[#d4af37]/50 transform hover:scale-105 transition-all"
+                data-testid="header-order-btn"
+                className="bg-[#d4af37] text-[#0a2c2e] hover:bg-[#f4e5b0] font-bold px-5 py-2.5 text-sm shadow-lg shadow-[#d4af37]/20 hover:shadow-[#d4af37]/40 transition-all duration-300"
               >
                 Order Now
               </Button>
             </div>
           </div>
         </div>
+        
+        {/* Bottom border glow */}
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent" />
       </header>
 
       {/* Hero Section */}
