@@ -144,7 +144,7 @@ const Home = () => {
             </div>
             
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[#d4af37] leading-tight drop-shadow-2xl">
-              Taste of Hyderabad is Arriving
+              Taste of Hyderabad – Now Open in Kharar, Mohali
             </h1>
             
             <p className="text-2xl md:text-3xl text-[#e8dcc0] font-light leading-relaxed">
@@ -347,29 +347,44 @@ const Home = () => {
                 <h3 className="text-3xl font-serif text-[#d4af37] mb-8 text-center">🍗 Non-Veg Specials</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {menuItems.nonVeg.map((item, index) => (
-                    <Card key={index} className="bg-[#0f3b3f] border-[#d4af37]/40 overflow-hidden group hover:border-[#d4af37] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/30 cursor-pointer">
-                      <div className={`relative h-56 overflow-hidden ${(item.name === 'Chicken Chilli' || item.name === 'Chicken 65') ? 'bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]' : ''}`}>
+                    <Card key={index} className="bg-gradient-to-br from-[#0f3b3f] to-[#0a2c2e] border-2 border-[#d4af37]/40 overflow-hidden group hover:border-[#d4af37] transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#d4af37]/40 cursor-pointer relative">
+                      <div className={`relative h-64 overflow-hidden ${(item.name === 'Chicken Chilli' || item.name === 'Chicken 65') ? 'bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]' : ''}`}>
                         <img 
                           src={item.image} 
                           alt={item.name}
-                          className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
+                          className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f3b3f] to-transparent opacity-60" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f3b3f] via-transparent to-transparent opacity-70" />
+                        
+                        {/* Shine effect on hover */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000" />
+                        </div>
+                        
                         {item.tag && (
-                          <Badge className="absolute top-4 right-4 bg-[#d4af37] text-[#0a2c2e] font-bold px-3 py-1 shadow-lg">
+                          <Badge className="absolute top-4 right-4 bg-gradient-to-r from-[#d4af37] to-[#f4e5b0] text-[#0a2c2e] font-bold px-4 py-2 shadow-lg text-sm transform group-hover:scale-110 transition-transform">
                             {item.tag}
                           </Badge>
                         )}
                       </div>
-                      <CardContent className="p-6 space-y-3">
-                        <h4 className="text-2xl font-serif text-[#d4af37]">{item.name}</h4>
+                      <CardContent className="p-6 space-y-3 relative">
+                        <h4 className="text-2xl font-serif text-[#d4af37] group-hover:text-[#f4e5b0] transition-colors">{item.name}</h4>
                         {item.serves && (
-                          <p className="text-sm text-[#e8dcc0] bg-[#0a2c2e]/50 inline-block px-3 py-1 rounded-full">
+                          <p className="text-sm text-[#e8dcc0] bg-[#0a2c2e]/70 inline-block px-4 py-2 rounded-full border border-[#d4af37]/30">
                             {item.serves}
                           </p>
                         )}
-                        <p className="text-3xl font-bold text-[#f4e5b0]">{item.price}</p>
+                        <div className="flex items-center justify-between pt-2">
+                          <p className="text-3xl font-bold text-[#f4e5b0] group-hover:scale-110 transition-transform">{item.price}</p>
+                          <div className="w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center group-hover:bg-[#d4af37] transition-colors">
+                            <span className="text-[#d4af37] group-hover:text-[#0a2c2e] font-bold">+</span>
+                          </div>
+                        </div>
                       </CardContent>
+                      
+                      {/* Corner decoration */}
+                      <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-[#d4af37]/20 group-hover:border-[#d4af37]/60 transition-colors" />
+                      <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-[#d4af37]/20 group-hover:border-[#d4af37]/60 transition-colors" />
                     </Card>
                   ))}
                 </div>
@@ -381,29 +396,44 @@ const Home = () => {
                 <h3 className="text-3xl font-serif text-[#d4af37] mb-8 text-center">🌿 Veg Delights</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {menuItems.veg.map((item, index) => (
-                    <Card key={index} className="bg-[#0f3b3f] border-[#d4af37]/40 overflow-hidden group hover:border-[#d4af37] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/30 cursor-pointer">
-                      <div className="relative h-56 overflow-hidden">
+                    <Card key={index} className="bg-gradient-to-br from-[#0f3b3f] to-[#0a2c2e] border-2 border-[#d4af37]/40 overflow-hidden group hover:border-[#d4af37] transition-all duration-500 hover:scale-[1.03] hover:shadow-2xl hover:shadow-[#d4af37]/40 cursor-pointer relative">
+                      <div className="relative h-64 overflow-hidden">
                         <img 
                           src={item.image} 
                           alt={item.name}
-                          className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700"
+                          className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f3b3f] to-transparent opacity-60" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f3b3f] via-transparent to-transparent opacity-70" />
+                        
+                        {/* Shine effect on hover */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000" />
+                        </div>
+                        
                         {item.tag && (
-                          <Badge className="absolute top-4 right-4 bg-[#d4af37] text-[#0a2c2e] font-bold px-3 py-1 shadow-lg">
+                          <Badge className="absolute top-4 right-4 bg-gradient-to-r from-[#d4af37] to-[#f4e5b0] text-[#0a2c2e] font-bold px-4 py-2 shadow-lg text-sm transform group-hover:scale-110 transition-transform">
                             {item.tag}
                           </Badge>
                         )}
                       </div>
-                      <CardContent className="p-6 space-y-3">
-                        <h4 className="text-2xl font-serif text-[#d4af37]">{item.name}</h4>
+                      <CardContent className="p-6 space-y-3 relative">
+                        <h4 className="text-2xl font-serif text-[#d4af37] group-hover:text-[#f4e5b0] transition-colors">{item.name}</h4>
                         {item.serves && (
-                          <p className="text-sm text-[#e8dcc0] bg-[#0a2c2e]/50 inline-block px-3 py-1 rounded-full">
+                          <p className="text-sm text-[#e8dcc0] bg-[#0a2c2e]/70 inline-block px-4 py-2 rounded-full border border-[#d4af37]/30">
                             {item.serves}
                           </p>
                         )}
-                        <p className="text-3xl font-bold text-[#f4e5b0]">{item.price}</p>
+                        <div className="flex items-center justify-between pt-2">
+                          <p className="text-3xl font-bold text-[#f4e5b0] group-hover:scale-110 transition-transform">{item.price}</p>
+                          <div className="w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center group-hover:bg-[#d4af37] transition-colors">
+                            <span className="text-[#d4af37] group-hover:text-[#0a2c2e] font-bold">+</span>
+                          </div>
+                        </div>
                       </CardContent>
+                      
+                      {/* Corner decoration */}
+                      <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-[#d4af37]/20 group-hover:border-[#d4af37]/60 transition-colors" />
+                      <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-[#d4af37]/20 group-hover:border-[#d4af37]/60 transition-colors" />
                     </Card>
                   ))}
                 </div>
