@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Phone, MapPin, Instagram, ChevronDown, Clock, Award, Flame } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Phone, MapPin, Instagram, ChevronDown, ChevronLeft, ChevronRight, Clock, Award, Flame, Utensils, Star } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -7,6 +9,51 @@ import { Badge } from '../components/ui/badge';
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [scrolled, setScrolled] = useState(false);
+  const [showCallAnimation, setShowCallAnimation] = useState(false);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 }, [
+    Autoplay({ delay: 3500, stopOnInteraction: false })
+  ]);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  const heroSlides = [
+    {
+      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/wky1rhav_Chicken%20Biryani%20Single.png',
+      title: 'Chicken Dum Biryani',
+      subtitle: 'Authentic Hyderabadi slow-cooked perfection'
+    },
+    {
+      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
+      title: 'Veg Biryani',
+      subtitle: 'Fresh vegetables layered with aromatic basmati'
+    },
+    {
+      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/ixuif05f_Chicken%2065.png',
+      title: 'Chicken 65',
+      subtitle: 'Crispy, spicy & irresistible'
+    },
+    {
+      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/7czvv2qh_Chicken%20Tikka%20Masala.png',
+      title: 'Tikka Butter Masala',
+      subtitle: 'Rich, creamy & full of flavor'
+    },
+    {
+      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/r9dnu13k_Chicken%20Chilli.png',
+      title: 'Chicken Chilli',
+      subtitle: 'Indo-Chinese flavors at their best'
+    }
+  ];
+
+  const handleBulkOrderClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    setShowCallAnimation(true);
+    setTimeout(() => setShowCallAnimation(false), 4000);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
