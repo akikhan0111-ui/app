@@ -1,24 +1,18 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Phone, MapPin, Instagram, ChevronDown, ChevronLeft, ChevronRight, Clock, Award, Flame, Utensils, Star } from 'lucide-react';
-import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
+import { Carousel, CarouselContent, CarouselItem } from '../components/ui/carousel';
 
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   const [scrolled, setScrolled] = useState(false);
   const [showCallAnimation, setShowCallAnimation] = useState(false);
+  const [carouselApi, setCarouselApi] = useState(null);
 
-  const autoplayPlugin = useRef(Autoplay({ delay: 3500, stopOnInteraction: false }));
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 }, [
-    autoplayPlugin.current
-  ]);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const autoplayPlugin = useRef(Autoplay({ delay: 3500, stopOnInteraction: false, playOnInit: true }));
 
   const heroSlides = [
     {
