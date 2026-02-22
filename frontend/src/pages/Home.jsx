@@ -22,7 +22,7 @@ const Home = () => {
         name: 'Veg Biryani', 
         price: '₹180', 
         serves: 'Serves 1',
-        image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/poqbknr9_Veg%20Biryani.jpg',
         tag: 'Popular'
       },
       { 
@@ -34,13 +34,13 @@ const Home = () => {
       { 
         name: 'Paneer Chilli', 
         price: '₹220', 
-        image: 'https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/1m8dkglt_Paneer%20Chilli.jpg',
         tag: 'Indo-Chinese'
       },
       { 
         name: 'Paneer Tikka Butter Masala', 
         price: '₹240', 
-        image: 'https://images.pexels.com/photos/30858402/pexels-photo-30858402.jpeg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/iomutwlb_Paneer%20Tikka%20Masala.jpg',
         tag: 'Rich & Creamy'
       }
     ],
@@ -81,7 +81,7 @@ const Home = () => {
       { 
         name: 'Chicken Tikka Butter Masala', 
         price: '₹250', 
-        image: 'https://images.unsplash.com/photo-1707448829764-9474458021ed',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/kmc15d9b_Chicken%20tikka%20masala.jpg',
         tag: 'Chef Special'
       }
     ]
@@ -187,8 +187,8 @@ const Home = () => {
           <div className="relative group">
             <div className="relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1705174299330-939dd03cc864" 
-                alt="Premium Hyderabadi Biryani"
+                src="https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/hw3neiha_Banner%20image.png" 
+                alt="Biryani Portions - Single, Regular, Family"
                 className="rounded-3xl shadow-2xl w-full transform group-hover:scale-[1.02] transition-transform duration-700"
               />
               
