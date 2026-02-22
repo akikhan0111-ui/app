@@ -42,19 +42,19 @@ const Home = () => {
       { 
         name: 'Paneer 65', 
         price: '₹220', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/5sb6nqyk_Paneer%2065.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/ste7u8s9_Paneer%2065.png',
         tag: 'Spicy'
       },
       { 
         name: 'Paneer Chilli', 
         price: '₹220', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/1m8dkglt_Paneer%20Chilli.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/a8jnanhj_Paneer%20Chilli.png',
         tag: 'Indo-Chinese'
       },
       { 
         name: 'Paneer Tikka Butter Masala', 
         price: '₹240', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/iomutwlb_Paneer%20Tikka%20Masala.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/swonxzvo_Paneer%20Tikka%20Masala.png',
         tag: 'Rich & Creamy'
       }
     ],
@@ -83,13 +83,13 @@ const Home = () => {
       { 
         name: 'Chicken 65', 
         price: '₹220', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/4jgrz3ga_Chicken%2065.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/ixuif05f_Chicken%2065.png',
         tag: 'Crispy & Hot'
       },
       { 
         name: 'Chicken Chilli', 
         price: '₹220', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/382wnty0_Chicken%20Chilli.jpg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/r9dnu13k_Chicken%20Chilli.png',
         tag: 'Indo-Chinese'
       },
       { 
