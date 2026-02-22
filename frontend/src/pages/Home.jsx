@@ -118,31 +118,18 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
-        {/* Clean gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a2c2e] via-[#0f3b3f] to-[#0a2c2e]" />
-        
-        {/* Subtle Charminar watermark - only on left side */}
-        <div 
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-full opacity-3"
-          style={{
-            backgroundImage: 'url(https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png)',
-            backgroundSize: 'contain',
-            backgroundPosition: 'center left',
-            backgroundRepeat: 'no-repeat'
-          }}
-        />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-br from-[#0a2c2e] via-[#0f3b3f] to-[#0a2c2e]">
         
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
           {/* Left Column - Text Content */}
           <div className="text-center lg:text-left space-y-8">
             <div className="inline-block">
-              <Badge className="bg-[#d4af37]/20 text-[#d4af37] border-2 border-[#d4af37] px-6 py-2 text-base font-bold mb-4 shadow-lg">
+              <Badge className="bg-[#d4af37]/20 text-[#d4af37] border-2 border-[#d4af37] px-6 py-2 text-base font-bold mb-4 shadow-lg animate-pulse">
                 🚀 Now Delivering in Kharar & Mohali
               </Badge>
             </div>
             
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[#d4af37] leading-tight">
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[#d4af37] leading-tight drop-shadow-2xl">
               Taste of Hyderabad is Arriving
             </h1>
             
@@ -176,19 +163,19 @@ const Home = () => {
             
             <div className="grid grid-cols-3 gap-6 pt-8 max-w-md mx-auto lg:mx-0">
               <div className="text-center space-y-2">
-                <div className="w-14 h-14 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto border-2 border-[#d4af37]/40">
+                <div className="w-14 h-14 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto border-2 border-[#d4af37]/40 hover:border-[#d4af37] hover:scale-110 transition-all">
                   <Clock className="w-7 h-7 text-[#d4af37]" />
                 </div>
                 <p className="text-[#e8dcc0] text-sm font-medium">45 Min<br/>Delivery</p>
               </div>
               <div className="text-center space-y-2">
-                <div className="w-14 h-14 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto border-2 border-[#d4af37]/40">
+                <div className="w-14 h-14 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto border-2 border-[#d4af37]/40 hover:border-[#d4af37] hover:scale-110 transition-all">
                   <Flame className="w-7 h-7 text-[#d4af37]" />
                 </div>
                 <p className="text-[#e8dcc0] text-sm font-medium">Authentic<br/>Taste</p>
               </div>
               <div className="text-center space-y-2">
-                <div className="w-14 h-14 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto border-2 border-[#d4af37]/40">
+                <div className="w-14 h-14 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto border-2 border-[#d4af37]/40 hover:border-[#d4af37] hover:scale-110 transition-all">
                   <Award className="w-7 h-7 text-[#d4af37]" />
                 </div>
                 <p className="text-[#e8dcc0] text-sm font-medium">Premium<br/>Quality</p>
@@ -196,21 +183,25 @@ const Home = () => {
             </div>
           </div>
           
-          {/* Right Column - Hero Image */}
+          {/* Right Column - Hero Image with Clean Frame */}
           <div className="relative group">
-            <div className="relative z-10 transform group-hover:scale-[1.02] transition-transform duration-700">
+            <div className="relative z-10">
               <img 
                 src="https://images.unsplash.com/photo-1705174299330-939dd03cc864" 
                 alt="Premium Hyderabadi Biryani"
-                className="rounded-3xl shadow-2xl w-full border-4 border-[#d4af37]/40 hover:border-[#d4af37]/60 transition-colors"
+                className="rounded-3xl shadow-2xl w-full transform group-hover:scale-[1.02] transition-transform duration-700"
               />
-              {/* Image corner accent */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-[#d4af37] rounded-tl-3xl" />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-[#d4af37] rounded-br-3xl" />
+              
+              {/* Decorative corner frames */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-[#d4af37] rounded-tl-3xl opacity-60" />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-[#d4af37] rounded-br-3xl opacity-60" />
+              
+              {/* Subtle glow overlay */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-[#d4af37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
             
-            {/* Glow effects */}
-            <div className="absolute inset-0 bg-[#d4af37]/10 rounded-3xl blur-3xl group-hover:blur-[50px] transition-all -z-10" />
+            {/* Bottom glow effect only */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-[#d4af37]/30 rounded-full blur-3xl -z-10 group-hover:h-40 group-hover:bg-[#d4af37]/40 transition-all" />
           </div>
         </div>
         
