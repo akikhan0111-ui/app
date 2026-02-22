@@ -70,7 +70,7 @@ const Home = () => {
         name: 'Chicken Biryani Regular', 
         price: '₹200', 
         serves: 'Serves 1-2',
-        image: 'https://images.pexels.com/photos/33947401/pexels-photo-33947401.jpeg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/jvy4zku0_Chicken%20Regular%20Biryani.jpg',
         tag: 'Most Ordered'
       },
       { 
