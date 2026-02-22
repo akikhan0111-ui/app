@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
-import { Phone, MapPin, Instagram, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Phone, MapPin, Instagram, ChevronDown, Clock, Award, Flame } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
 
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuItems = {
     veg: [
@@ -12,17 +22,26 @@ const Home = () => {
         name: 'Veg Biryani', 
         price: '₹180', 
         serves: 'Serves 1',
-        image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7'
+        image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7',
+        tag: 'Popular'
       },
       { 
         name: 'Paneer 65', 
         price: '₹220', 
-        image: 'https://images.pexels.com/photos/3928854/pexels-photo-3928854.png'
+        image: 'https://images.pexels.com/photos/3928854/pexels-photo-3928854.png',
+        tag: 'Spicy'
       },
       { 
         name: 'Paneer Chilli', 
         price: '₹220', 
-        image: 'https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e'
+        image: 'https://images.unsplash.com/photo-1767114915989-c6ab3c8fc42e',
+        tag: 'Indo-Chinese'
+      },
+      { 
+        name: 'Paneer Tikka Butter Masala', 
+        price: '₹240', 
+        image: 'https://images.pexels.com/photos/30858402/pexels-photo-30858402.jpeg',
+        tag: 'Rich & Creamy'
       }
     ],
     nonVeg: [
@@ -30,34 +49,40 @@ const Home = () => {
         name: 'Chicken Biryani Single', 
         price: '₹120', 
         serves: 'Serves 1',
-        image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8'
+        image: 'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a',
+        tag: 'Bestseller'
       },
       { 
         name: 'Chicken Biryani Regular', 
         price: '₹200', 
         serves: 'Serves 2-3',
-        image: 'https://images.unsplash.com/photo-1691171047294-bf039a943700'
+        image: 'https://images.pexels.com/photos/33947401/pexels-photo-33947401.jpeg',
+        tag: 'Most Ordered'
       },
       { 
         name: 'Chicken Biryani Family', 
         price: '₹450', 
         serves: 'Serves up to 5',
-        image: 'https://images.unsplash.com/photo-1691171047439-4b39b58b4766'
+        image: 'https://images.unsplash.com/photo-1705174299330-939dd03cc864',
+        tag: 'Value Pack'
       },
       { 
         name: 'Chicken 65', 
         price: '₹220', 
-        image: 'https://images.pexels.com/photos/20371522/pexels-photo-20371522.jpeg'
+        image: 'https://images.pexels.com/photos/9207044/pexels-photo-9207044.jpeg',
+        tag: 'Crispy & Hot'
       },
       { 
         name: 'Chicken Chilli', 
         price: '₹220', 
-        image: 'https://images.pexels.com/photos/30749024/pexels-photo-30749024.jpeg'
+        image: 'https://images.pexels.com/photos/5339079/pexels-photo-5339079.jpeg',
+        tag: 'Indo-Chinese'
       },
       { 
-        name: 'Tikka Butter Masala', 
-        price: '₹240', 
-        image: 'https://images.unsplash.com/photo-1701579231378-3726490a407b'
+        name: 'Chicken Tikka Butter Masala', 
+        price: '₹250', 
+        image: 'https://images.unsplash.com/photo-1707448829764-9474458021ed',
+        tag: 'Chef Special'
       }
     ]
   };
@@ -69,21 +94,23 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#0a2c2e]">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-[#0a2c2e]/95 backdrop-blur-sm z-50 border-b border-[#d4af37]/20">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <header className={`fixed top-0 w-full z-50 border-b border-[#d4af37]/20 transition-all duration-300 ${
+        scrolled ? 'bg-[#0a2c2e]/98 backdrop-blur-md py-2' : 'bg-[#0a2c2e]/95 backdrop-blur-sm py-4'
+      }`}>
+        <div className="container mx-auto px-4 flex items-center justify-between">
           <img 
             src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
             alt="Biryani Leaf" 
-            className="h-12 md:h-16"
+            className={`transition-all duration-300 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20 lg:h-24'}`}
           />
-          <nav className="hidden md:flex gap-6 text-[#d4af37] font-medium">
-            <button onClick={() => scrollToSection('menu')} className="hover:text-[#f4e5b0] transition-colors">Menu</button>
-            <button onClick={() => scrollToSection('order')} className="hover:text-[#f4e5b0] transition-colors">Order</button>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-[#f4e5b0] transition-colors">Contact</button>
+          <nav className="hidden md:flex gap-6 text-[#d4af37] font-medium text-lg">
+            <button onClick={() => scrollToSection('menu')} className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform">Menu</button>
+            <button onClick={() => scrollToSection('order')} className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform">Order</button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform">Contact</button>
           </nav>
           <Button 
             onClick={() => scrollToSection('order')}
-            className="bg-[#d4af37] text-[#0a2c2e] hover:bg-[#f4e5b0] font-semibold"
+            className="bg-[#d4af37] text-[#0a2c2e] hover:bg-[#f4e5b0] font-bold px-6 py-3 text-base shadow-lg hover:shadow-[#d4af37]/50"
           >
             Order Now
           </Button>
@@ -91,152 +118,208 @@ const Home = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+        {/* Animated gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a2c2e] via-[#0f3b3f] to-[#0a2c2e] opacity-90" />
+        
         {/* Charminar Watermark */}
         <div 
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-5 animate-pulse"
           style={{
             backgroundImage: 'url(https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png)',
             backgroundSize: '60%',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
+            animationDuration: '4s'
           }}
         />
         
-        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
-          <div className="text-center md:text-left space-y-6">
-            <h1 className="font-serif text-4xl md:text-6xl text-[#d4af37] leading-tight">
-              Taste of Hyderabad is Arriving in Kharar, Mohali
+        <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="text-center lg:text-left space-y-8">
+            <div className="inline-block">
+              <Badge className="bg-[#d4af37]/20 text-[#d4af37] border border-[#d4af37] px-4 py-2 text-sm font-semibold mb-4">
+                Now Delivering in Kharar & Mohali
+              </Badge>
+            </div>
+            
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-[#d4af37] leading-tight animate-fade-in">
+              Taste of Hyderabad is Arriving
             </h1>
-            <p className="text-xl md:text-2xl text-[#e8dcc0]">
-              Authentic Dum Biryani. Delivered Hot. Delivered Fresh.
+            <p className="text-2xl md:text-3xl text-[#e8dcc0] font-light">
+              Authentic Dum Biryani.<br/>
+              <span className="text-[#f4e5b0]">Delivered Hot. Delivered Fresh.</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+            
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-6">
               <Button 
-                className="bg-[#ff6b35] hover:bg-[#ff8555] text-white font-semibold px-8 py-6 text-lg"
+                className="bg-[#ff6b35] hover:bg-[#ff8555] text-white font-bold px-10 py-7 text-lg shadow-2xl hover:shadow-[#ff6b35]/50 transform hover:scale-105 transition-all"
                 onClick={() => window.open('https://www.swiggy.com', '_blank')}
               >
                 Order on Swiggy
               </Button>
               <Button 
-                className="bg-[#e23744] hover:bg-[#f44755] text-white font-semibold px-8 py-6 text-lg"
+                className="bg-[#e23744] hover:bg-[#f44755] text-white font-bold px-10 py-7 text-lg shadow-2xl hover:shadow-[#e23744]/50 transform hover:scale-105 transition-all"
                 onClick={() => window.open('https://www.zomato.com', '_blank')}
               >
                 Order on Zomato
               </Button>
             </div>
+            
             <Button 
               variant="outline"
-              className="w-full sm:w-auto border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0a2c2e] px-8 py-6 text-lg"
+              className="w-full sm:w-auto border-2 border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0a2c2e] px-10 py-7 text-lg font-bold transform hover:scale-105 transition-all"
               onClick={() => scrollToSection('order')}
             >
-              Order Direct
+              Order Direct & Save More
             </Button>
+            
+            <div className="grid grid-cols-3 gap-6 pt-8 max-w-md mx-auto lg:mx-0">
+              <div className="text-center">
+                <Clock className="w-8 h-8 text-[#d4af37] mx-auto mb-2" />
+                <p className="text-[#e8dcc0] text-sm">45 Min Delivery</p>
+              </div>
+              <div className="text-center">
+                <Flame className="w-8 h-8 text-[#d4af37] mx-auto mb-2" />
+                <p className="text-[#e8dcc0] text-sm">Authentic Taste</p>
+              </div>
+              <div className="text-center">
+                <Award className="w-8 h-8 text-[#d4af37] mx-auto mb-2" />
+                <p className="text-[#e8dcc0] text-sm">Premium Quality</p>
+              </div>
+            </div>
           </div>
           
-          <div className="relative">
-            <div className="relative z-10">
+          <div className="relative group">
+            <div className="relative z-10 transform group-hover:scale-105 transition-transform duration-500">
               <img 
-                src="https://images.unsplash.com/photo-1691171047439-4b39b58b4766" 
+                src="https://images.unsplash.com/photo-1705174299330-939dd03cc864" 
                 alt="Premium Hyderabadi Biryani"
-                className="rounded-lg shadow-2xl w-full"
+                className="rounded-2xl shadow-2xl w-full border-4 border-[#d4af37]/30"
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 w-full h-full bg-[#d4af37]/20 rounded-lg blur-xl" />
+            <div className="absolute -bottom-6 -right-6 w-full h-full bg-[#d4af37]/20 rounded-2xl blur-2xl group-hover:blur-3xl transition-all" />
+            <div className="absolute -top-6 -left-6 w-full h-full bg-[#e23744]/10 rounded-2xl blur-2xl" />
           </div>
         </div>
         
         <ChevronDown 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#d4af37] w-8 h-8 animate-bounce cursor-pointer"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#d4af37] w-10 h-10 animate-bounce cursor-pointer hover:text-[#f4e5b0]"
           onClick={() => scrollToSection('about')}
         />
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-[#0f3b3f] relative">
-        <div className="absolute inset-0 opacity-3"
-          style={{
-            backgroundImage: 'url(https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png)',
-            backgroundSize: '40%',
-            backgroundPosition: 'right center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        />
-        
+      <section id="about" className="py-24 bg-[#0f3b3f] relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#d4af37] text-center mb-12">
-            Why Biryani Leaf?
-          </h2>
-          
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <p className="text-lg md:text-xl text-[#e8dcc0] leading-relaxed">
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-5xl md:text-6xl text-[#d4af37] mb-6">
+              Why Biryani Leaf?
+            </h2>
+            <p className="text-xl md:text-2xl text-[#e8dcc0] max-w-3xl mx-auto leading-relaxed">
               We are a cloud kitchen focused only on perfecting Hyderabadi dum biryani.
               <br />No dine-in. No distractions.
               <br />Just authentic flavors, slow cooking, and premium ingredients.
             </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <Card className="bg-[#0a2c2e]/70 border-[#d4af37]/40 backdrop-blur-lg hover:border-[#d4af37] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/20">
+              <CardContent className="p-8 text-center space-y-4">
+                <div className="w-16 h-16 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto">
+                  <Flame className="w-8 h-8 text-[#d4af37]" />
+                </div>
+                <h3 className="text-2xl font-serif text-[#d4af37]">Dum Cooked</h3>
+                <p className="text-[#e8dcc0] leading-relaxed">Not rushed. Slow-cooked to perfection with authentic dum technique.</p>
+              </CardContent>
+            </Card>
             
-            <div className="grid md:grid-cols-2 gap-6 pt-8">
-              <Card className="bg-[#0a2c2e]/50 border-[#d4af37]/30 backdrop-blur">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-[#d4af37] mb-3">Dum Cooked</h3>
-                  <p className="text-[#e8dcc0]">Not rushed. Slow-cooked to perfection with authentic dum technique.</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-[#0a2c2e]/50 border-[#d4af37]/30 backdrop-blur">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-[#d4af37] mb-3">Premium Basmati</h3>
-                  <p className="text-[#e8dcc0]">Only the finest long-grain basmati rice for that authentic taste.</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-[#0a2c2e]/50 border-[#d4af37]/30 backdrop-blur">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-[#d4af37] mb-3">Hyderabadi Spices</h3>
-                  <p className="text-[#e8dcc0]">Authentic spice blend sourced directly from Hyderabad.</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-[#0a2c2e]/50 border-[#d4af37]/30 backdrop-blur">
-                <CardContent className="p-6 text-center">
-                  <h3 className="text-xl font-semibold text-[#d4af37] mb-3">Delivery-First</h3>
-                  <p className="text-[#e8dcc0]">Cloud kitchen model ensures hot, fresh biryani at your doorstep.</p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card className="bg-[#0a2c2e]/70 border-[#d4af37]/40 backdrop-blur-lg hover:border-[#d4af37] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/20">
+              <CardContent className="p-8 text-center space-y-4">
+                <div className="w-16 h-16 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto">
+                  <Award className="w-8 h-8 text-[#d4af37]" />
+                </div>
+                <h3 className="text-2xl font-serif text-[#d4af37]">Premium Basmati</h3>
+                <p className="text-[#e8dcc0] leading-relaxed">Only the finest long-grain basmati rice for that authentic taste.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-[#0a2c2e]/70 border-[#d4af37]/40 backdrop-blur-lg hover:border-[#d4af37] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/20">
+              <CardContent className="p-8 text-center space-y-4">
+                <div className="w-16 h-16 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto">
+                  <div className="text-3xl">🌶️</div>
+                </div>
+                <h3 className="text-2xl font-serif text-[#d4af37]">Hyderabadi Spices</h3>
+                <p className="text-[#e8dcc0] leading-relaxed">Authentic spice blend sourced directly from Hyderabad.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-[#0a2c2e]/70 border-[#d4af37]/40 backdrop-blur-lg hover:border-[#d4af37] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#d4af37]/20">
+              <CardContent className="p-8 text-center space-y-4">
+                <div className="w-16 h-16 bg-[#d4af37]/20 rounded-full flex items-center justify-center mx-auto">
+                  <Clock className="w-8 h-8 text-[#d4af37]" />
+                </div>
+                <h3 className="text-2xl font-serif text-[#d4af37]">Delivery-First</h3>
+                <p className="text-[#e8dcc0] leading-relaxed">Cloud kitchen model ensures hot, fresh biryani at your doorstep.</p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Logo placement - bottom right corner */}
+          <div className="absolute bottom-8 right-8 opacity-10 pointer-events-none hidden lg:block">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
+              alt="Biryani Leaf" 
+              className="w-64 h-64 object-contain"
+            />
           </div>
         </div>
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="py-20 bg-[#0a2c2e]">
+      <section id="menu" className="py-24 bg-[#0a2c2e] relative">
         <div className="container mx-auto px-4">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#d4af37] text-center mb-4">
-            Our Menu
-          </h2>
-          <p className="text-center text-[#e8dcc0] mb-12">
-            <span className="font-semibold">Portion Guide:</span> Single – 1 person | Regular – 2-3 people | Family – Up to 5 people
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="font-serif text-5xl md:text-6xl text-[#d4af37] mb-6">
+              Our Menu
+            </h2>
+            <div className="inline-block bg-[#0f3b3f] border border-[#d4af37]/30 rounded-full px-8 py-4">
+              <p className="text-[#e8dcc0] text-lg">
+                <span className="font-bold text-[#d4af37]">Portion Guide:</span> Single – 1 person | Regular – 2-3 people | Family – Up to 5 people
+              </p>
+            </div>
+          </div>
           
           {/* Category Tabs */}
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Button
               onClick={() => setActiveCategory('all')}
-              className={`${activeCategory === 'all' ? 'bg-[#d4af37] text-[#0a2c2e]' : 'bg-[#0f3b3f] text-[#d4af37]'} hover:bg-[#d4af37] hover:text-[#0a2c2e] px-8 py-6`}
+              className={`${
+                activeCategory === 'all' 
+                  ? 'bg-[#d4af37] text-[#0a2c2e] shadow-lg shadow-[#d4af37]/50' 
+                  : 'bg-[#0f3b3f] text-[#d4af37] border border-[#d4af37]/30'
+              } hover:bg-[#d4af37] hover:text-[#0a2c2e] px-10 py-6 text-lg font-bold transform hover:scale-105 transition-all`}
             >
               All Items
             </Button>
             <Button
               onClick={() => setActiveCategory('veg')}
-              className={`${activeCategory === 'veg' ? 'bg-[#d4af37] text-[#0a2c2e]' : 'bg-[#0f3b3f] text-[#d4af37]'} hover:bg-[#d4af37] hover:text-[#0a2c2e] px-8 py-6`}
+              className={`${
+                activeCategory === 'veg' 
+                  ? 'bg-[#d4af37] text-[#0a2c2e] shadow-lg shadow-[#d4af37]/50' 
+                  : 'bg-[#0f3b3f] text-[#d4af37] border border-[#d4af37]/30'
+              } hover:bg-[#d4af37] hover:text-[#0a2c2e] px-10 py-6 text-lg font-bold transform hover:scale-105 transition-all`}
             >
-              Veg
+              🌿 Veg
             </Button>
             <Button
               onClick={() => setActiveCategory('nonVeg')}
-              className={`${activeCategory === 'nonVeg' ? 'bg-[#d4af37] text-[#0a2c2e]' : 'bg-[#0f3b3f] text-[#d4af37]'} hover:bg-[#d4af37] hover:text-[#0a2c2e] px-8 py-6`}
+              className={`${
+                activeCategory === 'nonVeg' 
+                  ? 'bg-[#d4af37] text-[#0a2c2e] shadow-lg shadow-[#d4af37]/50' 
+                  : 'bg-[#0f3b3f] text-[#d4af37] border border-[#d4af37]/30'
+              } hover:bg-[#d4af37] hover:text-[#0a2c2e] px-10 py-6 text-lg font-bold transform hover:scale-105 transition-all`}
             >
-              Non-Veg
+              🍗 Non-Veg
             </Button>
           </div>
           
