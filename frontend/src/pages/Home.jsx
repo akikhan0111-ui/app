@@ -291,21 +291,21 @@ const Home = () => {
           </div>
           
           {/* Right Column - Hero Slider */}
-          <div className="relative group">
-            <div className="embla overflow-hidden rounded-3xl" ref={emblaRef}>
-              <div className="embla__container flex">
+          <div className="relative group" data-testid="hero-carousel">
+            <div className="overflow-hidden rounded-3xl" ref={emblaRef}>
+              <div className="flex">
                 {heroSlides.map((slide, index) => (
-                  <div key={index} className="embla__slide flex-[0_0_100%] min-w-0 relative">
-                    <div className="relative h-[400px] md:h-[500px]">
+                  <div key={index} className="flex-[0_0_100%] min-w-0 relative">
+                    <div className="relative h-[350px] sm:h-[400px] md:h-[500px]">
                       <img 
                         src={slide.image} 
                         alt={slide.title}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a2c2e]/90 via-transparent to-transparent" />
-                      <div className="absolute bottom-8 left-8 right-8">
-                        <h3 className="font-serif text-3xl md:text-4xl text-[#d4af37] mb-2">{slide.title}</h3>
-                        <p className="text-[#e8dcc0] text-lg">{slide.subtitle}</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a2c2e]/90 via-[#0a2c2e]/20 to-transparent" />
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#d4af37] mb-1">{slide.title}</h3>
+                        <p className="text-[#e8dcc0] text-sm sm:text-base md:text-lg">{slide.subtitle}</p>
                       </div>
                     </div>
                   </div>
@@ -316,23 +316,25 @@ const Home = () => {
             {/* Navigation Arrows */}
             <button 
               onClick={scrollPrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#d4af37]/90 hover:bg-[#d4af37] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all z-10 shadow-lg"
+              data-testid="carousel-prev"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a2c2e]/70 hover:bg-[#d4af37] border border-[#d4af37]/50 hover:border-[#d4af37] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
             >
-              <ChevronLeft className="w-6 h-6 text-[#0a2c2e]" />
+              <ChevronLeft className="w-5 h-5 text-[#d4af37] hover:text-[#0a2c2e]" />
             </button>
             <button 
               onClick={scrollNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#d4af37]/90 hover:bg-[#d4af37] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all z-10 shadow-lg"
+              data-testid="carousel-next"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0a2c2e]/70 hover:bg-[#d4af37] border border-[#d4af37]/50 hover:border-[#d4af37] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-10"
             >
-              <ChevronRight className="w-6 h-6 text-[#0a2c2e]" />
+              <ChevronRight className="w-5 h-5 text-[#d4af37] hover:text-[#0a2c2e]" />
             </button>
             
             {/* Decorative corner frames */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-[#d4af37] rounded-tl-3xl opacity-60 pointer-events-none" />
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-[#d4af37] rounded-br-3xl opacity-60 pointer-events-none" />
+            <div className="absolute -top-3 -left-3 w-20 h-20 border-t-2 border-l-2 border-[#d4af37]/40 rounded-tl-3xl pointer-events-none" />
+            <div className="absolute -bottom-3 -right-3 w-20 h-20 border-b-2 border-r-2 border-[#d4af37]/40 rounded-br-3xl pointer-events-none" />
             
             {/* Bottom glow effect */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-[#d4af37]/30 rounded-full blur-3xl -z-10 group-hover:h-40 group-hover:bg-[#d4af37]/40 transition-all" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-[#d4af37]/20 rounded-full blur-3xl -z-10" />
           </div>
         </div>
         
