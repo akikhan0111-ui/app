@@ -28,7 +28,7 @@ const Home = () => {
       { 
         name: 'Paneer 65', 
         price: '₹220', 
-        image: 'https://images.pexels.com/photos/3928854/pexels-photo-3928854.png',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/5sb6nqyk_Paneer%2065.jpg',
         tag: 'Spicy'
       },
       { 
@@ -49,7 +49,7 @@ const Home = () => {
         name: 'Chicken Biryani Single', 
         price: '₹120', 
         serves: 'Serves 1',
-        image: 'https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/k5yq6q06_Chicken%20Single%20Biryani.jpg',
         tag: 'Bestseller'
       },
       { 
@@ -63,19 +63,19 @@ const Home = () => {
         name: 'Chicken Biryani Family', 
         price: '₹450', 
         serves: 'Serves 3-4',
-        image: 'https://images.unsplash.com/photo-1705174299330-939dd03cc864',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/f01txe4i_Chicken%20Family%20Biryani.jpg',
         tag: 'Value Pack'
       },
       { 
         name: 'Chicken 65', 
         price: '₹220', 
-        image: 'https://images.pexels.com/photos/9207044/pexels-photo-9207044.jpeg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/4jgrz3ga_Chicken%2065.jpg',
         tag: 'Crispy & Hot'
       },
       { 
         name: 'Chicken Chilli', 
         price: '₹220', 
-        image: 'https://images.pexels.com/photos/5339079/pexels-photo-5339079.jpeg',
+        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/382wnty0_Chicken%20Chilli.jpg',
         tag: 'Indo-Chinese'
       },
       { 
@@ -95,13 +95,13 @@ const Home = () => {
     <div className="min-h-screen bg-[#0a2c2e]">
       {/* Header */}
       <header className={`fixed top-0 w-full z-50 border-b border-[#d4af37]/20 transition-all duration-300 ${
-        scrolled ? 'bg-[#0a2c2e]/98 backdrop-blur-md py-2' : 'bg-[#0a2c2e]/95 backdrop-blur-sm py-4'
+        scrolled ? 'bg-[#0a2c2e]/98 backdrop-blur-md py-3' : 'bg-[#0a2c2e]/95 backdrop-blur-sm py-5'
       }`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           <img 
             src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
             alt="Biryani Leaf" 
-            className={`transition-all duration-300 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20 lg:h-24'}`}
+            className={`transition-all duration-300 ${scrolled ? 'h-20 md:h-24' : 'h-24 md:h-28 lg:h-32'}`}
           />
           <nav className="hidden md:flex gap-6 text-[#d4af37] font-medium text-lg">
             <button onClick={() => scrollToSection('menu')} className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform">Menu</button>
@@ -573,13 +573,13 @@ const Home = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
                 alt="Biryani Leaf" 
-                className="h-16 mx-auto md:mx-0 mb-4"
+                className="h-24 md:h-28 lg:h-32 mx-auto md:mx-0 mb-4"
               />
-              <p className="text-[#e8dcc0]">Taste of Hyderabad</p>
+              <p className="text-[#e8dcc0] text-lg">Taste of Hyderabad</p>
             </div>
             
             <div className="text-center">
-              <h4 className="text-[#d4af37] font-semibold mb-4">Follow Us</h4>
+              <h4 className="text-[#d4af37] font-semibold mb-4 text-lg">Follow Us</h4>
               <a 
                 href="https://www.instagram.com/biryani.leaf" 
                 target="_blank" 
@@ -593,7 +593,7 @@ const Home = () => {
             </div>
             
             <div className="text-center md:text-right">
-              <p className="text-[#e8dcc0] mb-2">Cloud Kitchen | Delivery Only</p>
+              <p className="text-[#e8dcc0] mb-2 text-lg">Cloud Kitchen | Delivery Only</p>
               <p className="text-sm text-[#e8dcc0]">Open Daily: 11 AM - 11 PM</p>
             </div>
           </div>
