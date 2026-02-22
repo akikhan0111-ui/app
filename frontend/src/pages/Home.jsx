@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Phone, MapPin, Instagram, ChevronDown, ChevronLeft, ChevronRight, Clock, Award, Flame, Utensils, Star } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -11,14 +11,21 @@ const Home = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showCallAnimation, setShowCallAnimation] = useState(false);
 
+  const autoplayPlugin = useRef(Autoplay({ delay: 3500, stopOnInteraction: false }));
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 }, [
-    Autoplay({ delay: 3500, stopOnInteraction: false })
+    autoplayPlugin.current
   ]);
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   const heroSlides = [
+    {
+      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/hw3neiha_Banner%20image.png',
+      title: 'Biryani Leaf',
+      subtitle: 'Taste of Hyderabad – Now Open in Kharar, Mohali'
+    },
     {
       image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/wky1rhav_Chicken%20Biryani%20Single.png',
       title: 'Chicken Dum Biryani',
