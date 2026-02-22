@@ -571,41 +571,50 @@ const Home = () => {
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             {/* Contact Card */}
-            <Card className="bg-[#0a2c2e] border-[#d4af37]/30">
+            <Card className="bg-[#0a2c2e] border-[#d4af37]/30" data-testid="contact-card">
               <CardContent className="p-8 space-y-6">
                 <h3 className="text-2xl font-semibold text-[#d4af37] text-center">Call or WhatsApp</h3>
                 
                 <div className="space-y-4">
                   <a 
                     href="tel:8804081857"
-                    className={`flex items-center justify-center gap-3 bg-[#0f3b3f] hover:bg-[#d4af37]/20 p-4 rounded-lg transition-all group relative ${showCallAnimation ? 'ring-4 ring-[#d4af37] animate-pulse' : ''}`}
+                    data-testid="phone-1"
+                    className={`flex items-center justify-center gap-3 bg-[#0f3b3f] hover:bg-[#d4af37]/20 p-4 rounded-lg transition-all group relative overflow-hidden ${showCallAnimation ? 'ring-2 ring-[#d4af37] ring-offset-2 ring-offset-[#0a2c2e]' : ''}`}
                   >
-                    <Phone className={`text-[#d4af37] group-hover:scale-110 transition-transform ${showCallAnimation ? 'animate-bounce' : ''}`} />
+                    <div className="relative">
+                      <Phone className={`w-5 h-5 text-[#d4af37] group-hover:scale-110 transition-transform ${showCallAnimation ? 'animate-wiggle' : ''}`} />
+                      {showCallAnimation && (
+                        <>
+                          <span className="absolute inset-0 rounded-full border-2 border-[#d4af37] animate-ping" />
+                          <span className="absolute -inset-1 rounded-full border border-[#d4af37]/50 animate-pulse" />
+                        </>
+                      )}
+                    </div>
                     <span className="text-[#e8dcc0] text-lg font-medium">8804081857</span>
-                    {showCallAnimation && (
-                      <div className="absolute -right-2 -top-2">
-                        <Phone className="w-8 h-8 text-[#d4af37] animate-ping" />
-                      </div>
-                    )}
                   </a>
                   
                   <a 
                     href="tel:8287767107"
-                    className={`flex items-center justify-center gap-3 bg-[#0f3b3f] hover:bg-[#d4af37]/20 p-4 rounded-lg transition-all group relative ${showCallAnimation ? 'ring-4 ring-[#d4af37] animate-pulse' : ''}`}
+                    data-testid="phone-2"
+                    className={`flex items-center justify-center gap-3 bg-[#0f3b3f] hover:bg-[#d4af37]/20 p-4 rounded-lg transition-all group relative overflow-hidden ${showCallAnimation ? 'ring-2 ring-[#d4af37] ring-offset-2 ring-offset-[#0a2c2e]' : ''}`}
                   >
-                    <Phone className={`text-[#d4af37] group-hover:scale-110 transition-transform ${showCallAnimation ? 'animate-bounce' : ''}`} />
+                    <div className="relative">
+                      <Phone className={`w-5 h-5 text-[#d4af37] group-hover:scale-110 transition-transform ${showCallAnimation ? 'animate-wiggle' : ''}`} />
+                      {showCallAnimation && (
+                        <>
+                          <span className="absolute inset-0 rounded-full border-2 border-[#d4af37] animate-ping" />
+                          <span className="absolute -inset-1 rounded-full border border-[#d4af37]/50 animate-pulse" />
+                        </>
+                      )}
+                    </div>
                     <span className="text-[#e8dcc0] text-lg font-medium">8287767107</span>
-                    {showCallAnimation && (
-                      <div className="absolute -right-2 -top-2">
-                        <Phone className="w-8 h-8 text-[#d4af37] animate-ping" />
-                      </div>
-                    )}
                   </a>
                 </div>
                 
                 <Button 
                   className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold py-6 text-lg"
                   onClick={() => window.open('https://wa.me/918804081857', '_blank')}
+                  data-testid="whatsapp-btn"
                 >
                   Order via WhatsApp
                 </Button>
