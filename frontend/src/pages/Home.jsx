@@ -108,26 +108,66 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-[#0a2c2e]">
       {/* Header */}
-      <header className={`fixed top-0 w-full z-50 border-b border-[#d4af37]/20 transition-all duration-300 ${
-        scrolled ? 'bg-[#0a2c2e]/98 backdrop-blur-md py-3' : 'bg-[#0a2c2e]/95 backdrop-blur-sm py-5'
-      }`}>
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <img 
-            src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
-            alt="Biryani Leaf" 
-            className={`transition-all duration-300 ${scrolled ? 'h-20 md:h-24' : 'h-24 md:h-28 lg:h-32'}`}
-          />
-          <nav className="hidden md:flex gap-6 text-[#d4af37] font-medium text-lg">
-            <button onClick={() => scrollToSection('menu')} className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform">Menu</button>
-            <button onClick={() => scrollToSection('order')} className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform">Order</button>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform">Contact</button>
-          </nav>
-          <Button 
-            onClick={() => scrollToSection('order')}
-            className="bg-[#d4af37] text-[#0a2c2e] hover:bg-[#f4e5b0] font-bold px-6 py-3 text-base shadow-lg hover:shadow-[#d4af37]/50"
-          >
-            Order Now
-          </Button>
+      <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-gradient-to-r from-[#0a2c2e]/98 via-[#0f3b3f]/98 to-[#0a2c2e]/98 backdrop-blur-md py-2 shadow-lg shadow-[#d4af37]/10' 
+          : 'bg-gradient-to-r from-[#0a2c2e]/95 via-[#0f3b3f]/95 to-[#0a2c2e]/95 backdrop-blur-sm py-4'
+      } border-b-2 border-[#d4af37]/30`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
+                alt="Biryani Leaf" 
+                className={`transition-all duration-300 ${scrolled ? 'h-16 md:h-20' : 'h-20 md:h-24 lg:h-28'}`}
+              />
+              <div className="hidden lg:block border-l-2 border-[#d4af37]/30 pl-4">
+                <p className="text-[#d4af37] font-serif text-lg">Taste of Hyderabad</p>
+                <p className="text-[#e8dcc0] text-sm flex items-center gap-1">
+                  <Clock className="w-3 h-3" />
+                  Open 11 AM - 11 PM
+                </p>
+              </div>
+            </div>
+            
+            <nav className="hidden md:flex gap-6 text-[#d4af37] font-medium text-lg">
+              <button 
+                onClick={() => scrollToSection('menu')} 
+                className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform relative group"
+              >
+                Menu
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4af37] group-hover:w-full transition-all" />
+              </button>
+              <button 
+                onClick={() => scrollToSection('order')} 
+                className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform relative group"
+              >
+                Order
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4af37] group-hover:w-full transition-all" />
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')} 
+                className="hover:text-[#f4e5b0] transition-colors hover:scale-105 transform relative group"
+              >
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4af37] group-hover:w-full transition-all" />
+              </button>
+            </nav>
+            
+            <div className="flex items-center gap-3">
+              <div className="hidden md:flex flex-col items-end">
+                <a href="tel:8804081857" className="text-[#d4af37] font-bold text-sm hover:text-[#f4e5b0] transition-colors">
+                  📞 8804081857
+                </a>
+              </div>
+              <Button 
+                onClick={() => scrollToSection('order')}
+                className="bg-gradient-to-r from-[#d4af37] to-[#f4e5b0] text-[#0a2c2e] hover:from-[#f4e5b0] hover:to-[#d4af37] font-bold px-6 py-3 text-base shadow-lg hover:shadow-[#d4af37]/50 transform hover:scale-105 transition-all"
+              >
+                Order Now
+              </Button>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -197,24 +237,48 @@ const Home = () => {
             </div>
           </div>
           
-          {/* Right Column - Hero Image with Clean Frame */}
+          {/* Right Column - Hero Slider */}
           <div className="relative group">
-            <div className="relative z-10">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/hw3neiha_Banner%20image.png" 
-                alt="Biryani Portions - Single, Regular, Family"
-                className="rounded-3xl shadow-2xl w-full transform group-hover:scale-[1.02] transition-transform duration-700"
-              />
-              
-              {/* Decorative corner frames */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-[#d4af37] rounded-tl-3xl opacity-60" />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-[#d4af37] rounded-br-3xl opacity-60" />
-              
-              {/* Subtle glow overlay */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-[#d4af37]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="embla overflow-hidden rounded-3xl" ref={emblaRef}>
+              <div className="embla__container flex">
+                {heroSlides.map((slide, index) => (
+                  <div key={index} className="embla__slide flex-[0_0_100%] min-w-0 relative">
+                    <div className="relative h-[400px] md:h-[500px]">
+                      <img 
+                        src={slide.image} 
+                        alt={slide.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a2c2e]/90 via-transparent to-transparent" />
+                      <div className="absolute bottom-8 left-8 right-8">
+                        <h3 className="font-serif text-3xl md:text-4xl text-[#d4af37] mb-2">{slide.title}</h3>
+                        <p className="text-[#e8dcc0] text-lg">{slide.subtitle}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            {/* Bottom glow effect only */}
+            {/* Navigation Arrows */}
+            <button 
+              onClick={scrollPrev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#d4af37]/90 hover:bg-[#d4af37] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all z-10 shadow-lg"
+            >
+              <ChevronLeft className="w-6 h-6 text-[#0a2c2e]" />
+            </button>
+            <button 
+              onClick={scrollNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#d4af37]/90 hover:bg-[#d4af37] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all z-10 shadow-lg"
+            >
+              <ChevronRight className="w-6 h-6 text-[#0a2c2e]" />
+            </button>
+            
+            {/* Decorative corner frames */}
+            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-[#d4af37] rounded-tl-3xl opacity-60 pointer-events-none" />
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-[#d4af37] rounded-br-3xl opacity-60 pointer-events-none" />
+            
+            {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-[#d4af37]/30 rounded-full blur-3xl -z-10 group-hover:h-40 group-hover:bg-[#d4af37]/40 transition-all" />
           </div>
         </div>
@@ -459,18 +523,28 @@ const Home = () => {
                 <div className="space-y-4">
                   <a 
                     href="tel:8804081857"
-                    className="flex items-center justify-center gap-3 bg-[#0f3b3f] hover:bg-[#d4af37]/20 p-4 rounded-lg transition-colors group"
+                    className={`flex items-center justify-center gap-3 bg-[#0f3b3f] hover:bg-[#d4af37]/20 p-4 rounded-lg transition-all group relative ${showCallAnimation ? 'ring-4 ring-[#d4af37] animate-pulse' : ''}`}
                   >
-                    <Phone className="text-[#d4af37] group-hover:scale-110 transition-transform" />
+                    <Phone className={`text-[#d4af37] group-hover:scale-110 transition-transform ${showCallAnimation ? 'animate-bounce' : ''}`} />
                     <span className="text-[#e8dcc0] text-lg font-medium">8804081857</span>
+                    {showCallAnimation && (
+                      <div className="absolute -right-2 -top-2">
+                        <Phone className="w-8 h-8 text-[#d4af37] animate-ping" />
+                      </div>
+                    )}
                   </a>
                   
                   <a 
                     href="tel:8287767107"
-                    className="flex items-center justify-center gap-3 bg-[#0f3b3f] hover:bg-[#d4af37]/20 p-4 rounded-lg transition-colors group"
+                    className={`flex items-center justify-center gap-3 bg-[#0f3b3f] hover:bg-[#d4af37]/20 p-4 rounded-lg transition-all group relative ${showCallAnimation ? 'ring-4 ring-[#d4af37] animate-pulse' : ''}`}
                   >
-                    <Phone className="text-[#d4af37] group-hover:scale-110 transition-transform" />
-                    <span className="text-[#e8dcc0] text-lg font-medium">82877 67107</span>
+                    <Phone className={`text-[#d4af37] group-hover:scale-110 transition-transform ${showCallAnimation ? 'animate-bounce' : ''}`} />
+                    <span className="text-[#e8dcc0] text-lg font-medium">8287767107</span>
+                    {showCallAnimation && (
+                      <div className="absolute -right-2 -top-2">
+                        <Phone className="w-8 h-8 text-[#d4af37] animate-ping" />
+                      </div>
+                    )}
                   </a>
                 </div>
                 
@@ -537,7 +611,7 @@ const Home = () => {
             
             <Button 
               className="bg-[#d4af37] hover:bg-[#f4e5b0] text-[#0a2c2e] font-semibold px-12 py-6 text-lg mt-8"
-              onClick={() => window.open('tel:8804081857', '_self')}
+              onClick={handleBulkOrderClick}
             >
               Call Now for Bulk Orders
             </Button>
