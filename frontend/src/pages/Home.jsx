@@ -19,6 +19,7 @@ const Home = () => {
   const heroSlides = [
     {
       image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/hw3neiha_Banner%20image.png',
+      //image: 'https://drive.google.com/file/d/1YsxuZbvSFxbbHwkp-V3dXXFlxnDvWpHE/view',
       title: 'Biryani Leaf',
       subtitle: 'Taste of Hyderabad – Now Open in Kharar, Mohali'
     },
@@ -408,9 +409,7 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="absolute bottom-8 right-8 opacity-10 pointer-events-none hidden lg:block">
-            <img src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" alt="Biryani Leaf" className="w-64 h-64 object-contain" />
-          </div>
+          
         </div>
       </section>
 
@@ -629,7 +628,8 @@ const Home = () => {
             </p>
             <Button 
               className="bg-[#d4af37] hover:bg-[#f4e5b0] text-[#0a2c2e] font-semibold px-12 py-6 text-lg mt-8"
-              onClick={handleBulkOrderClick}
+              //onClick={handleBulkOrderClick}
+              onClick={() => scrollToSection('order')}
               data-testid="bulk-order-btn"
             >
               Call Now for Bulk Orders
@@ -691,12 +691,15 @@ const Home = () => {
       {/* Footer */}
       <footer className="bg-[#0a2c2e] border-t border-[#d4af37]/20 py-12">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div 
+              //className="grid md:grid-cols-3 gap-8 mb-8">
+              className="grid md:grid-cols-3 gap-8 mb-8 items-center">
             <div className="text-center md:text-left">
               <img 
                 src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
                 alt="Biryani Leaf" 
-                className="h-24 md:h-28 lg:h-32 mx-auto md:mx-0 mb-4"
+                //className="h-24 md:h-28 lg:h-32 mx-auto md:mx-0 mb-4"
+                className="h-48 md:h-56 lg:h-64 w-auto mx-auto md:mx-0"
               />
             </div>
             
