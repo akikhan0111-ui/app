@@ -70,7 +70,7 @@ const Home = () => {
     veg: [
       { 
         name: 'Veg Biryani Single', 
-        price: '₹100', 
+        price: '₹90', 
         serves: 'Serves 1',
         image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
         tag: 'Bestseller'
@@ -91,7 +91,7 @@ const Home = () => {
       },
       { 
         name: 'Paneer 65', 
-        price: '₹220', 
+        price: '₹190', 
         image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/ste7u8s9_Paneer%2065.png',
         tag: 'Spicy'
       },
@@ -118,14 +118,14 @@ const Home = () => {
     nonVeg: [
       { 
         name: 'Chicken Biryani Single', 
-        price: '₹120', 
+        price: '₹110', 
         serves: 'Serves 1',
         image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/wky1rhav_Chicken%20Biryani%20Single.png',
         tag: 'Bestseller'
       },
       { 
         name: 'Chicken Biryani Regular', 
-        price: '₹200', 
+        price: '₹220', 
         serves: 'Serves 1-2',
         image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/85s8ocqw_Chicken%20Biryani%20Regular.png',
         tag: 'Most Ordered'
@@ -151,7 +151,7 @@ const Home = () => {
       },
       { 
         name: 'Chicken Tikka Butter Masala', 
-        price: '₹250', 
+        price: '₹260', 
         image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/7czvv2qh_Chicken%20Tikka%20Masala.png',
         tag: 'Chef Special'
       }
