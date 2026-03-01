@@ -6,6 +6,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem } from '../components/ui/carousel';
+import PhirniImg from "../Images/Phirni.jpg";
 
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -112,7 +113,7 @@ const Home = () => {
         name: 'Shahi Phirni', 
         price: '₹50', 
         //image: 'https://customer-assets.emergentagent.com/job_82501bd8-cd97-4315-8348-51a8c1b05602/artifacts/amrrh3v2_Phirni.jpg',
-        image: '../Images/Phirni.png',
+        image: PhirniImg,
         tag: 'Dessert',
         category: 'dessert'
       }
