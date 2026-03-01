@@ -19,7 +19,7 @@ const Home = () => {
   const heroSlides = [
     {
       //image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/hw3neiha_Banner%20image.png',
-      image: 'frontend/src/Images/Banner image.png',
+      image: 'app/frontend/src/Images/Banner image.png',
       title: 'Biryani Leaf',
       subtitle: 'Taste of Hyderabad – Now Open in Kharar, Mohali'
     },
