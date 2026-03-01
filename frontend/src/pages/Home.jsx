@@ -111,7 +111,8 @@ const Home = () => {
       { 
         name: 'Shahi Phirni', 
         price: '₹50', 
-        image: 'https://customer-assets.emergentagent.com/job_82501bd8-cd97-4315-8348-51a8c1b05602/artifacts/amrrh3v2_Phirni.jpg',
+        //image: 'https://customer-assets.emergentagent.com/job_82501bd8-cd97-4315-8348-51a8c1b05602/artifacts/amrrh3v2_Phirni.jpg',
+        image: '../Images/Phirni.png',
         tag: 'Dessert',
         category: 'dessert'
       }
