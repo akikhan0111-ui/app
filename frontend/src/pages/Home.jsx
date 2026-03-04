@@ -18,6 +18,10 @@ import PaneerChilliImg from "../Images/Paneer-Chilli.png";
 import Chicken65Img from "../Images/Chicken-65.png";
 import ChickenChilliImg from "../Images/Chicken-Chilli.png";
 import BannerImg from "../Images/Banner-image.png";
+import ZomatoLogo from "../Images/Zomato-logo.png";
+import LogoImg from "../Images/logo.jpeg";
+import SwiggyLogo from "../Images/swiggy-logo.png";
+import UPIQRCodeImg from "../Images/UPI-QR-Code.jpg";
 
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -30,7 +34,6 @@ const Home = () => {
 
   const heroSlides = [
     {
-      //image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/hw3neiha_Banner%20image.png',
       image: BannerImg,
       title: 'Biryani Leaf',
       subtitle: 'Taste of Hyderabad – Now Open in Kharar, Mohali'
@@ -123,7 +126,6 @@ const Home = () => {
       { 
         name: 'Shahi Phirni', 
         price: '₹50', 
-        //image: 'https://customer-assets.emergentagent.com/job_82501bd8-cd97-4315-8348-51a8c1b05602/artifacts/amrrh3v2_Phirni.jpg',
         image: PhirniImg,
         tag: 'Dessert',
         category: 'dessert'
@@ -227,7 +229,7 @@ const Home = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img 
-                src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
+                src={LogoImg}
                 alt="Biryani Leaf" 
                 data-testid="header-logo"
                 className={`transition-all duration-500 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20 lg:h-24'}`}
@@ -307,15 +309,15 @@ const Home = () => {
                 data-testid="swiggy-btn"
                 onClick={() => window.open('https://www.swiggy.com', '_blank')}
               >
-                <img src="https://customer-assets.emergentagent.com/job_82501bd8-cd97-4315-8348-51a8c1b05602/artifacts/i4fsbvjc_swiggy%20logo%20png.png" alt="Swiggy" className="w-7 h-7 object-contain" />
+                <img src={SwiggyLogo} alt="Swiggy" className="w-7 h-7 object-contain" />
                 Order on Swiggy
               </Button>
               <Button 
                 className="bg-[#e23744] hover:bg-[#f44755] text-white font-bold px-8 py-7 text-lg shadow-2xl hover:shadow-[#e23744]/50 transform hover:scale-105 transition-all flex items-center gap-3"
                 data-testid="zomato-btn"
-                onClick={() => window.open('https://www.zomato.com', '_blank')}
+                onClick={() => window.open('https://www.zomato.com/chandigarh/biryani-leaf-kharar-road-mohali/order', '_blank')}
               >
-                <img src="https://customer-assets.emergentagent.com/job_82501bd8-cd97-4315-8348-51a8c1b05602/artifacts/k783o53v_Zomato%20logo.png" alt="Zomato" className="w-7 h-7 object-contain" />
+                <img src={ZomatoLogo} alt="Zomato" className="w-7 h-7 object-contain" />
                 Order on Zomato
               </Button>
             </div>
@@ -566,7 +568,7 @@ const Home = () => {
                 
                 <div className="bg-white p-4 rounded-lg">
                   <img 
-                    src="https://customer-assets.emergentagent.com/job_82501bd8-cd97-4315-8348-51a8c1b05602/artifacts/oqa1ihtu_UPI%20QR%20Code.jpg" 
+                    src={UPIQRCodeImg} 
                     alt="UPI QR Code" 
                     className="w-full rounded-lg"
                     data-testid="qr-code-img"
@@ -603,7 +605,7 @@ const Home = () => {
             
             <div className="bg-white p-4 rounded-xl mb-4">
               <img 
-                src="https://customer-assets.emergentagent.com/job_82501bd8-cd97-4315-8348-51a8c1b05602/artifacts/oqa1ihtu_UPI%20QR%20Code.jpg" 
+                src={UPIQRCodeImg} 
                 alt="UPI QR Code" 
                 className="w-full rounded-lg"
               />
@@ -709,7 +711,7 @@ const Home = () => {
               className="grid md:grid-cols-3 gap-8 mb-8 items-center">
             <div className="text-center md:text-left">
               <img 
-                src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
+                src={LogoImg} 
                 alt="Biryani Leaf" 
                 //className="h-24 md:h-28 lg:h-32 mx-auto md:mx-0 mb-4"
                 className="h-48 md:h-56 lg:h-64 w-auto mx-auto md:mx-0"
