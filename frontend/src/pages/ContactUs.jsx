@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Mail, Phone, ArrowLeft, Send, MapPin } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import LogoImg from "../Images/Logo_BiryaniLeaf.png";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -26,7 +27,7 @@ const ContactUs = () => {
 
         <div className="text-center mb-12">
           <img 
-            src="https://customer-assets.emergentagent.com/job_68a4ecf8-ba90-4263-90c1-1d1f08db2c1e/artifacts/6i6kvsxs_biryanileaf.png" 
+            src={LogoImg}
             alt="Biryani Leaf" 
             className="h-20 mx-auto mb-6"
           />
