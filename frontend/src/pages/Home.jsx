@@ -19,7 +19,7 @@ import Chicken65Img from "../Images/Chicken-65.png";
 import ChickenChilliImg from "../Images/Chicken-Chilli.png";
 import BannerImg from "../Images/Banner-image.png";
 import ZomatoLogo from "../Images/Zomato-logo.png";
-import LogoImg from "../Images/logo.jpeg";
+import LogoImg from "../Images/Logo_BiryaniLeaf.png";
 import SwiggyLogo from "../Images/swiggy-logo.png";
 import UPIQRCodeImg from "../Images/UPI-QR-Code.jpg";
 
