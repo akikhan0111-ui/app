@@ -7,6 +7,17 @@ import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem } from '../components/ui/carousel';
 import PhirniImg from "../Images/Phirni.jpg";
+import VegBiryaniImg from "../Images/Veg-Biryani.png";
+import ChickenBiryaniRegularImg from "../Images/Chicken-Biryani-Regular.png";
+import ChickenBiryaniFamilyImg from "../Images/Chicken-Biryani-Family.png";
+import ChickenBiryaniSingleImg from "../Images/Chicken-Biryani-Single.png";
+import ChickenTikkaMasalaImg from "../Images/Chicken-Tikka-Masala.png";
+import Paneer65Img from "../Images/Paneer-65.png";
+import PaneerTikkaMasalaImg from "../Images/Paneer-Tikka-Masala.png";
+import PaneerChilliImg from "../Images/Paneer-Chilli.png";
+import Chicken65Img from "../Images/Chicken-65.png";
+import ChickenChilliImg from "../Images/Chicken-Chilli.png";
+import BannerImg from "../Images/Banner-image.png";
 
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -20,32 +31,32 @@ const Home = () => {
   const heroSlides = [
     {
       //image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/hw3neiha_Banner%20image.png',
-      image: 'src/Images/Banner image.png',
+      image: BannerImg,
       title: 'Biryani Leaf',
       subtitle: 'Taste of Hyderabad – Now Open in Kharar, Mohali'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/wky1rhav_Chicken%20Biryani%20Single.png',
+      image: ChickenBiryaniSingleImg,
       title: 'Chicken Dum Biryani',
       subtitle: 'Authentic Hyderabadi slow-cooked perfection'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
+      image: VegBiryaniImg,
       title: 'Veg Biryani',
       subtitle: 'Fresh vegetables layered with aromatic basmati'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/ixuif05f_Chicken%2065.png',
+      image: Chicken65Img,
       title: 'Chicken 65',
       subtitle: 'Crispy, spicy & irresistible'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/7czvv2qh_Chicken%20Tikka%20Masala.png',
+      image: ChickenTikkaMasalaImg,
       title: 'Tikka Butter Masala',
       subtitle: 'Rich, creamy & full of flavor'
     },
     {
-      image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/r9dnu13k_Chicken%20Chilli.png',
+      image: ChickenChilliImg,
       title: 'Chicken Chilli',
       subtitle: 'Indo-Chinese flavors at their best'
     }
@@ -70,43 +81,43 @@ const Home = () => {
 
   const menuItems = {
     veg: [
-      { 
-        name: 'Veg Biryani Single', 
-        price: '₹90', 
+      {
+        name: 'Veg Biryani Single',
+        price: '₹90',
         serves: 'Serves 1',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
+        image: VegBiryaniImg,
         tag: 'Bestseller'
       },
-      { 
-        name: 'Veg Biryani Regular', 
-        price: '₹180', 
+      {
+        name: 'Veg Biryani Regular',
+        price: '₹180',
         serves: 'Serves 1-2',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
+        image: VegBiryaniImg,
         tag: 'Popular'
       },
-      { 
-        name: 'Veg Biryani Family', 
-        price: '₹400', 
+      {
+        name: 'Veg Biryani Family',
+        price: '₹400',
         serves: 'Serves 3-4',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/w5szl33p_Veg%20Biryani.png',
+        image: VegBiryaniImg,
         tag: 'Value Pack'
       },
-      { 
-        name: 'Paneer 65', 
-        price: '₹190', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/ste7u8s9_Paneer%2065.png',
+      {
+        name: 'Paneer 65',
+        price: '₹190',
+        image: Paneer65Img,
         tag: 'Spicy'
       },
-      { 
-        name: 'Paneer Chilli', 
-        price: '₹220', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/a8jnanhj_Paneer%20Chilli.png',
+      {
+        name: 'Paneer Chilli',
+        price: '₹220',
+        image: PaneerChilliImg,
         tag: 'Indo-Chinese'
       },
-      { 
-        name: 'Paneer Tikka Butter Masala', 
-        price: '₹240', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/swonxzvo_Paneer%20Tikka%20Masala.png',
+      {
+        name: 'Paneer Tikka Butter Masala',
+        price: '₹240',
+        image: PaneerTikkaMasalaImg,
         tag: 'Rich & Creamy'
       },
       { 
@@ -119,43 +130,43 @@ const Home = () => {
       }
     ],
     nonVeg: [
-      { 
-        name: 'Chicken Biryani Single', 
-        price: '₹110', 
+      {
+        name: 'Chicken Biryani Single',
+        price: '₹110',
         serves: 'Serves 1',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/wky1rhav_Chicken%20Biryani%20Single.png',
+        image: ChickenBiryaniSingleImg,
         tag: 'Bestseller'
       },
-      { 
-        name: 'Chicken Biryani Regular', 
-        price: '₹220', 
+      {
+        name: 'Chicken Biryani Regular',
+        price: '₹220',
         serves: 'Serves 1-2',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/85s8ocqw_Chicken%20Biryani%20Regular.png',
+        image: ChickenBiryaniRegularImg,
         tag: 'Most Ordered'
       },
-      { 
-        name: 'Chicken Biryani Family', 
-        price: '₹450', 
+      {
+        name: 'Chicken Biryani Family',
+        price: '₹450',
         serves: 'Serves 3-4',
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/t0peu4w7_Chicken%20Biryani%20Family.png',
+        image: ChickenBiryaniFamilyImg,
         tag: 'Value Pack'
       },
-      { 
-        name: 'Chicken 65', 
-        price: '₹220', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/ixuif05f_Chicken%2065.png',
+      {
+        name: 'Chicken 65',
+        price: '₹220',
+        image: Chicken65Img,
         tag: 'Crispy & Hot'
       },
-      { 
-        name: 'Chicken Chilli', 
-        price: '₹220', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/r9dnu13k_Chicken%20Chilli.png',
+      {
+        name: 'Chicken Chilli',
+        price: '₹220',
+        image: ChickenChilliImg,
         tag: 'Indo-Chinese'
       },
-      { 
-        name: 'Chicken Tikka Butter Masala', 
-        price: '₹260', 
-        image: 'https://customer-assets.emergentagent.com/job_taste-hyderabad/artifacts/7czvv2qh_Chicken%20Tikka%20Masala.png',
+      {
+        name: 'Chicken Tikka Butter Masala',
+        price: '₹260',
+        image: ChickenTikkaMasalaImg,
         tag: 'Chef Special'
       }
     ]
