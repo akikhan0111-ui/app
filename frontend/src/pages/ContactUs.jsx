@@ -118,7 +118,7 @@ const ContactUs = () => {
                   </div>
                   <div className="flex items-center gap-3 text-[#e8dcc0]">
                     <Phone className="w-4 h-4 text-[#d4af37]" />
-                    <span>8287767197</span>
+                    <span>8287767107</span>
                   </div>
                   <div className="flex items-center gap-3 text-[#e8dcc0]">
                     <Phone className="w-4 h-4 text-[#d4af37]" />
