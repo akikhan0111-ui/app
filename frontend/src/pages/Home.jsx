@@ -531,7 +531,7 @@ const Home = () => {
                         </>
                       )}
                     </div>
-                    <span className="text-[#e8dcc0] text-lg font-medium">8287767197</span>
+                    <span className="text-[#e8dcc0] text-lg font-medium">8287767107</span>
                   </div>
 
                   <div 
@@ -617,7 +617,7 @@ const Home = () => {
                 <p className="text-[#e8dcc0] text-sm leading-relaxed">
                   After payment, send screenshot on WhatsApp for confirmation:
                 </p>
-                <p className="text-[#d4af37] font-bold">8093186810 / 8287767197</p>
+                <p className="text-[#d4af37] font-bold">8093186810 / 8287767107</p>
               </div>
               <Button 
                 className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold py-4 mt-2"
