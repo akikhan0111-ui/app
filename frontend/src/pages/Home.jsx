@@ -307,7 +307,7 @@ const Home = () => {
               <Button 
                 className="bg-[#ff6b35] hover:bg-[#ff8555] text-white font-bold px-8 py-7 text-lg shadow-2xl hover:shadow-[#ff6b35]/50 transform hover:scale-105 transition-all flex items-center gap-3"
                 data-testid="swiggy-btn"
-                onClick={() => window.open('https://www.swiggy.com', '_blank')}
+                onClick={() => window.open('https://www.swiggy.com/city/chandigarh/biryani-leaf-greater-mohali-rest1347076', '_blank')}
               >
                 <img src={SwiggyLogo} alt="Swiggy" className="w-7 h-7 object-contain" />
                 Order on Swiggy
